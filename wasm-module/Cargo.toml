@@ -1,11 +1,7 @@
-# https://doc.rust-lang.org/cargo/reference/unstable.html#per-package-target
-cargo-features = ["per-package-target"]
-
 [package]
 name = "wasm-module"
 version = "0.1.0"
 edition = "2021"
-force-target = "wasm32-unknown-unknown"
 
 [lib]
 crate-type = ["cdylib"]

@@ -2,10 +2,7 @@
 
 The goal is to have a `bin` crate depend on a `.wasm` file that is built from a local dependency and only have to `cargo build` it.
 
-To achieve this, 2 unstable features are required:
-
-* `bindeps`: https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#artifact-dependencies
-* `per-package-target`: https://doc.rust-lang.org/cargo/reference/unstable.html#per-package-target
+To achieve this, it uses the [`bindeps`](https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#artifact-dependencies) unstable feature.
 
 This repository has the appropriate setup and `cargo build` does indeed succeed using nightly (`cargo 1.61.0-nightly (3d6970d50 2022-02-28)`).
 
@@ -54,4 +51,5 @@ stack backtrace:
   13: cargo::ops::cargo_compile::compile
   14: cargo::commands::build::exec
   15: cargo::cli::main
-  16: cargo::main```
+  16: cargo::main
+  ```
