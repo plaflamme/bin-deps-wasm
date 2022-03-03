@@ -1,0 +1,19 @@
+# https://doc.rust-lang.org/cargo/reference/unstable.html#per-package-target
+cargo-features = ["per-package-target"]
+
+[package]
+name = "wasm-module"
+version = "0.1.0"
+edition = "2021"
+force-target = "wasm32-unknown-unknown"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# $ cargo --version
+# cargo 1.61.0-nightly (3d6970d50 2022-02-28)
+#
+# Adding this dependency breaks cargo build with
+# activated_features for invalid package: features did not find PackageId { name: "log", version: "0.4.14", source: "registry `crates-io`" } NormalOrDevOrArtifactTarget(None)', src/tools/cargo/src/cargo/core/resolver/features.rs:318:14
+# log = "0.4"
